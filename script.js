@@ -40,3 +40,43 @@ for ( const item of scrollContainder) {
         item.scrollLeft += evt.deltaY;
     })
 }
+
+
+
+function calculateCartCount(cartItems) {
+    let totalCount = 0;
+    cartItems.forEach(item => {
+        totalCount += item.quantity;
+    });
+    return totalCount;
+}
+
+function updateCartCount(count) {
+    const cartCountElement = document.getElementById("cartcount");
+    if (cartCountElement) {
+        let displayCount = count.toString();
+
+        if (count > 99) {
+            displayCount = "99+";
+            cartCountElement.classList.add("smaller");
+            cartCountElement.classList.remove("small");
+        } else if (count > 10) {
+            cartCountElement.classList.add("small");
+            cartCountElement.classList.remove("smaller");
+        } else {
+            cartCountElement.classList.remove("small", "smaller");
+        }
+
+        cartCountElement.textContent = displayCount;
+    }
+}
+
+
+// Retrieve cart items count from localStorage and update cart count on page load
+const storedCartItems = localStorage.getItem("cartItems");
+            if (storedCartItems) {
+                const cartItems = JSON.parse(storedCartItems);
+                updateCartCount(calculateCartCount(cartItems)); // Update cart count based on retrieved cart items
+            }
+            const addToCartBtn = document.getElementById("addtocart");
+            const quantitySelect = document.querySelector(".product-quantity");

@@ -263,6 +263,27 @@ footer {
     display: none;
 }
 
+.cartcount {
+    position: absolute;
+    top: 10px;
+    justify-content: center;
+    right: 89px;
+    color: #f08804;
+    border-radius: 50%;
+    font-size: 20px;
+    transition: font-size 0.3s ease; /* Add transition for smooth font size change */
+}
+
+.cartcount.small {
+    right: 86px;
+    font-size: 16px; /* Reduced font size for 10-99 count */
+}
+
+.cartcount.smaller {
+     right: 83px;
+     margin-top: 5px;
+     font-size: 13px; /* Further reduced font size for 99+ count */
+}
 
 /* ----------- media queries -------- */
 
@@ -330,5 +351,8 @@ footer {
         justify-content: center;
         flex-direction: column;
         font-size: 14px;
+    }
+    .cartcount {
+        right: 39px;
     }
 }
