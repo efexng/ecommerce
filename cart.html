@@ -130,7 +130,12 @@
                     const sellerRank = document.createElement('p');
                     sellerRank.className = 'product-cart-bestseller';
                     sellerRank.id = 'seller-rank';
+                    if (item.sellerRank) {
                     sellerRank.innerHTML = '<span>#1 Best Seller</span> ' + item.sellerRank;
+                    } else {
+                    // Hide the sellerRank element if item.sellerRank doesn't exist
+                    sellerRank.style.display = 'none';
+                    }
 
 
                     const stockInfo = document.createElement('p');
@@ -174,7 +179,6 @@
                     if (item.connectivityTechnology) {
                         specs.innerHTML += `<p><b>Connectivity Technology:</b></p> <p>${item.connectivityTechnology}</p>`;
                     }
-
 
 
                     const cartActions = document.createElement('div');
