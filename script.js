@@ -33,13 +33,7 @@ next_btn.addEventListener('click', (e)=> {
 });
 
 
-const scrollContainder = document.querySelectorAll('.products')
-for ( const item of scrollContainder) {
-    item.addEventListener('wheel', (evt)=>{
-        evt.preventDefault();
-        item.scrollLeft += evt.deltaY;
-    })
-}
+
 
 
 
