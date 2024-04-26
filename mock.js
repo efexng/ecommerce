@@ -161,9 +161,20 @@ document.addEventListener("DOMContentLoaded", function () {
       setTimeout(function () {
           // Redirect to order.html with itemCount as a query parameter
           window.location.href = `order.html?itemCount=${itemCount}`;
-          
+          // Delete everything in the cart after redirection
+          const cartItems = localStorage.getItem('cartItems');
+          if (cartItems) {
+              localStorage.removeItem('cartItems'); // Remove all cart items from localStorage
+              // Optionally, you can also clear the cart display on the page
+              const cartDisplay = document.querySelector('.cart-display');
+              if (cartDisplay) {
+                  cartDisplay.innerHTML = ''; // Remove all cart items from the display
+              }
+          }
       }, 3000); // 3000 milliseconds = 3 seconds
   });
 });
+
+
 
 

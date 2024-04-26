@@ -435,46 +435,50 @@
         }
 
 
-        document.addEventListener("DOMContentLoaded", function () {
-    // Retrieve cart items from localStorage
+   
+
+ </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
     const storedCartItems = localStorage.getItem("cartItems");
+    const cartLeft = document.querySelector('.cart-left');
+    const cartRight = document.querySelector('.cart-right');
+    const cartLeft2 = document.querySelector('.cart-left2');
+
     if (storedCartItems) {
         const cartItems = JSON.parse(storedCartItems);
         if (cartItems.length > 0) {
-            // Cart is not empty, display the cart section
-            const cartRightSection = document.querySelector('.cart-right');
-            const cartLeftSection = document.querySelector('.cart-left');
-            if (cartRightSection) {
-                cartRightSection.style.display = 'block'; // Display the cart-right section
-            }
-            if (cartLeftSection) {
-                cartLeftSection.style.display = 'block'; // Display the cart-left section
-            }
-            // Add cart items to the cart display
-            cartItems.forEach(item => {
-                createCartItemElement(item);
+            // Cart has items, display cart-left and cart-right
+            cartLeft.style.display = 'block';
+            cartRight.style.display = 'block';
+            cartLeft2.style.display = 'none'; // Hide cart-left2
+            updateSubtotal(cartItems); // Initial subtotal calculation
+            updateCartCount(calculateCartCount(cartItems)); // Initial cart count update
+
+            // Event listener for quantity changes
+            document.querySelectorAll('.quantity-input').forEach(input => {
+                input.addEventListener('input', () => {
+                    const itemName = input.dataset.itemName;
+                    const newQuantity = parseInt(input.value);
+                    updateCartItemQuantity(itemName, newQuantity);
+                });
             });
         } else {
-            // Cart is empty, hide the cart sections
-            const cartRightSection = document.querySelector('.cart-right');
-            const cartLeftSection = document.querySelector('.cart-left');
-            const cartLeftSection2 = document.querySelector('.cart-left2');
-            if (cartRightSection) {
-                cartRightSection.style.display = 'none'; // Hide the cart-right section
-            }
-            if (cartLeftSection) {
-                cartLeftSection.style.display = 'none'; // Hide the cart-left section
-            }
-            if (cartLeftSection2) {
-                cartLeftSection2.style.display = 'block'; // Hide the cart-left section
-                
-            }
+            // Cart is empty, display cart-left2 and hide cart-left and cart-right
+            cartLeft.style.display = 'none';
+            cartRight.style.display = 'none';
+            cartLeft2.style.display = 'block'; // Show cart-left2
         }
+    } else {
+        // Cart is empty, display cart-left2 and hide cart-left and cart-right
+        cartLeft.style.display = 'none';
+        cartRight.style.display = 'none';
+        cartLeft2.style.display = 'block'; // Show cart-left2
     }
 });
 
-
- </script>
+</script>
 
 </body>
 
