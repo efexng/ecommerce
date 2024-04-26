@@ -216,7 +216,7 @@
             <select class="product-quantity">
                 <option value="1">Quantity: 1</option>
                 <option value="2">Quantity: 2</option>
-                <option value="3">Quantity: 3</option>
+                <option value="99">Quantity: 99</option>
             </select>
 
             <a href="cart.html" id="addtocart"><button class="btn">Add to cart</button></a>
@@ -492,30 +492,12 @@
                 return totalCount;
             }
 
-            function updateCartCount(count) {
-                const cartCountElement = document.getElementById("cartcount");
-                if (cartCountElement) {
-                    let displayCount = count.toString();
-
-                    if (count > 99) {
-                        displayCount = "99+";
-                        cartCountElement.classList.add("smaller");
-                        cartCountElement.classList.remove("small");
-                    } else if (count > 10) {
-                        cartCountElement.classList.add("small");
-                        cartCountElement.classList.remove("smaller");
-                    } else {
-                        cartCountElement.classList.remove("small", "smaller");
-                    }
-
-                    cartCountElement.textContent = displayCount;
-                }
-            }
-
+            
 
         });
     </script>
 
+<script src="./script.js"></script>
 
 </body>
 

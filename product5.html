@@ -486,28 +486,10 @@
                 return totalCount;
             }
 
-            function updateCartCount(count) {
-                const cartCountElement = document.getElementById("cartcount");
-                if (cartCountElement) {
-                    let displayCount = count.toString();
-
-                    if (count > 99) {
-                        displayCount = "99+";
-                        cartCountElement.classList.add("smaller");
-                        cartCountElement.classList.remove("small");
-                    } else if (count > 10) {
-                        cartCountElement.classList.add("small");
-                        cartCountElement.classList.remove("smaller");
-                    } else {
-                        cartCountElement.classList.remove("small", "smaller");
-                    }
-
-                    cartCountElement.textContent = displayCount;
-                }
-            }
-
+            
         });
     </script>
+<script src="./script.js"></script>
 
 </body>
 

@@ -170,9 +170,16 @@ nav {
     cursor: pointer;
 }
 
-.cart-right button:hover {
-    background: #ebc712;
-}
+/* Define hover styles for the "Buy now" button */
+.buynowbtn:hover {
+    background: #ebc712; /* Your hover background color */
+  }
+  
+  /* Disable hover effect for disabled "Buy now" button */
+  .buynowbtn[disabled] {
+    pointer-events: none;
+  }
+  
 
 .footer-cart {
     margin-top: auto;

@@ -267,7 +267,7 @@ footer {
     position: absolute;
     top: 10px;
     justify-content: center;
-    right: 89px;
+    right: 90px;
     color: #f08804;
     border-radius: 50%;
     font-size: 20px;
@@ -278,14 +278,21 @@ footer {
 .cartcount.small {
     right: 86px;
     font-size: 16px;
-    /* Reduced font size for 10-99 count */
+    transition: font-size 0.3s ease;
 }
 
 .cartcount.smaller {
     right: 83px;
     margin-top: 5px;
     font-size: 13px;
-    /* Further reduced font size for 99+ count */
+    transition: font-size 0.3s ease;
+}
+
+.cartcount.smallest {
+    right: 88px;
+    margin-top: 3px;
+    font-size: 16px;
+    transition: font-size 0.3s ease;
 }
 
 #seller-rank2 {

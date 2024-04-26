@@ -53,12 +53,15 @@ function updateCartCount(count) {
         if (count > 99) {
             displayCount = "99+";
             cartCountElement.classList.add("smaller");
-            cartCountElement.classList.remove("small");
+            cartCountElement.classList.remove("small", "smallest");
         } else if (count > 10) {
             cartCountElement.classList.add("small");
-            cartCountElement.classList.remove("smaller");
-        } else {
+            cartCountElement.classList.remove("smaller", "smallest");
+        } else if (count === 10) { // Fixed the equality check
+            cartCountElement.classList.add("smallest");
             cartCountElement.classList.remove("small", "smaller");
+        } else if (count < 10) {
+            cartCountElement.classList.remove("small", "smaller", "smallest");
         }
 
         cartCountElement.textContent = displayCount;
