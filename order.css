@@ -1,0 +1,84 @@
+.confirmation-box {
+    border: 2px solid green;
+    border-left: 20px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #f2f2f2;
+}
+.checkbox-container {
+    display: flex;
+    align-items: center;
+}
+.green-check {
+    font-size: 24px;
+    color: green;
+    margin-right: 10px;
+}
+.checkbox-container span {
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 600;
+    color: green;
+}
+.confirmation {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+.confimn-mail {
+    margin-bottom: 15px;
+}
+.new {
+    color: green;
+    font-weight: 600;
+}
+.amzn {
+    text-decoration: underline;
+    color: #007185;
+}
+.usernameorder {
+    color: #007185;
+}
+.ordernum {
+    margin-bottom: 30px;
+}
+
+.ordernum ul {
+    margin-left: 30px;
+}
+
+.ordernum b {
+    margin-left: 15px;
+}
+
+.gurantdev {
+    margin-top: 2px;
+    margin-left: 15px;
+}
+.editorder {
+    margin-bottom: 10px;
+    color: #007185;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+.fa-solid.fa-caret-right {
+    font-size: 12px;
+}
+
+.fa-solid.fa-caret-down{
+    font-size: 12;
+}
+
+.editordering {
+    margin-bottom: 50px;
+    margin-top: 15px;
+    color: #007185;
+    font-size: 20px;
+}

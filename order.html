@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="order.css">
+    <script src="https://kit.fontawesome.com/7d399dc76b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Navigation bar  -->
+    <nav>
+        <a href="/"><img src="./assets/amazon_logo.png" width="100" alt="" srcset=""></a>
+        <div class="nav-location">
+            <img src="./assets/location_icon.png" height="20" alt="">
+            <div>
+                <p>Deliver to</p>
+                <h1>United Kingdom</h1>
+            </div>
+        </div>
+        <div class="nav-search">
+            <div class="nav-search-category">
+                <p>All</p>
+                <img src="./assets/dropdown_icon.png" height="12" alt="">
+            </div>
+            <input type="text" class="nav-search-input" placeholder="Search Amazon" name="" id="">
+            <img src="./assets/search_icon.png" class="nav-search-icon" alt="">
+        </div>
+        <div class="nav-language">
+            <img src="./assets/us_flag.png" width="25px" alt="">
+            <p>EN</p>
+            <img src="./assets/dropdown_icon.png" width="8px" alt="">
+        </div>
+        <div class="nav-text">
+            <a href="signin.html">
+                <p>Hello, Sign In</p>
+            </a>
+            <h1>Account & Lists <img src="./assets/dropdown_icon.png" width="8px" alt=""></h1>
+        </div>
+        <div class="nav-text">
+            <p>Return</p>
+            <h1>& Orders</h1>
+        </div>
+        <a href="/signin.html" class="mobile-user-icon">
+            <img src="./assets/user.png" alt="" srcset="">
+        </a>
+        <a href="cart.html" class="nav-cart">
+            <img src="./assets/cart_icon.png" width="35px" alt="">
+            <span id="cartcount" class="cartcount">0</span>
+            <h4>Basket</h4>
+        </a>
+    </nav>
+
+    <div class="nav-bottom">
+        <div>
+            <img src="./assets/menu_icon.png" width="25px" alt="">
+            <p>All</p>
+        </div>
+        <p>Today's Deals</p>
+        <p>Customer Services</p>
+        <p>Registry</p>
+        <p>Gift Crads</p>
+        <p>Sell</p>
+    </div>
+    <!-- End Of Navigation bar  -->
+
+    <div class="confirmation-box">
+        <div class="checkbox-container">
+            <i class="fa-solid fa-check green-check"></i>
+            <span>Thank you, Your order has been placed.</span>
+        </div>
+       <div class="confirmation">
+        <div class="confimn-mail">
+        <p>An email confirmation has been sent to you.</p>
+        <p><span class="new">New!</span> Get shipment notifications on your mobile device with free <span class="amzn">Amazon app</span>.</p>
+        </div>
+       <div class="ordernum">
+        <b>Order number: 100-737367373-384389</b>
+        <ul>
+            <li id="itemscount"></li>
+        </ul>
+        <div class="gurantdev">
+            <b >Guaranteed delivery: <span class="new">Jan 12, 2017</span>.</b>
+        </div>
+       </div>
+        <div class="editorder">
+            <p><a href="#">Review or edit your order</a></p>
+            <i class="fa-solid fa-caret-right"></i>
+        </div>
+        <hr>
+        <div class="editordering">
+            <p><a href="#">Turn on 1-Click ordering</a></p>
+        </div>
+       </div>
+    </div>
+    
+
+    <div class="product-slider-with-price">
+        <h2>Related Products</h2>
+        <div class="products">
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-1.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-2.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-3.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-4.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-5.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-6.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-7.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-8.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-9.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-10.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-11.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+            <div class="product-card">
+                <div class="product-img-container">
+                    <img src="./assets/product2-12.jpg" alt="">
+                </div>
+                <div class="product-offer">
+                    <p>27% off</p> <span>Deal</span>
+                </div>
+                <p class="product-price">$ <span>14.49</span> List Price: 19.95</p>
+                <h4>This product is the best for you</h4>
+            </div>
+        </div>
+    </div>
+
+ 
+    <footer class="product-footer">
+        <img src="./assets/amazon_logo.png" width="100" alt="">
+        <p>© 1996-2024, Amazon.com, Inc. or its affiliates</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Function to parse URL parameters
+    function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Retrieve itemCount from URL parameters
+    const itemCount = getParameterByName('itemCount');
+
+    // Display the retrieved itemCount in the HTML using innerHTML to render HTML tags
+    const itemCountElement = document.getElementById('itemscount'); // Assuming you want to display it in an element with ID "itemscount"
+    if (itemCountElement) {
+        itemCountElement.innerHTML = `${itemCount} items will be shipped to <span class="usernameorder">Efe Apoki</span> <i class="fa-solid fa-caret-down"></i> by Amazon.com`;
+    }
+});
+
+
+    </script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,3 +1,10 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
 .cart {
     display: flex;
     gap: 20px;
@@ -19,6 +26,20 @@
     border: none;
     height: 1px;
     background: #dadada;
+}
+
+.cart-left2 {
+    background: white;
+    padding: 20px;
+    height: 100px;
+    width: 1200px;
+    display: none;
+}
+
+.cart-left2 h1 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 15px;
 }
 
 .product-cart-list {
@@ -147,7 +168,7 @@
 }
 
 .footer-cart {
-    margin-top: 50px;
+    margin-top: auto;
 }
 
 

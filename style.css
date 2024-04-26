@@ -6,6 +6,10 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
     background-color: #dadada;
 }
 
@@ -50,10 +54,10 @@ nav {
 .nav-search-category {
     display: flex;
     align-items: center;
-   padding: 10px 20px;
-   gap: 5px;
-   background: #e5e5e5;
-   border-radius: 4px 0 0 4px;
+    padding: 10px 20px;
+    gap: 5px;
+    background: #e5e5e5;
+    border-radius: 4px 0 0 4px;
 }
 
 .nav-search-input {
@@ -64,10 +68,10 @@ nav {
 }
 
 .nav-search-icon {
-     max-width: 41px;
-     padding: 8px;
-     background: #ffd64f;
-     border-radius: 0 4px 4px 0;
+    max-width: 41px;
+    padding: 8px;
+    background: #ffd64f;
+    border-radius: 0 4px 4px 0;
 }
 
 .nav-language {
@@ -90,17 +94,17 @@ nav {
     font-size: 14px;
 }
 
-.nav-cart { 
+.nav-cart {
     display: flex;
     align-items: center;
-    margin: 0px 15px ;
+    margin: 0px 15px;
 }
 
 .nav-bottom {
     display: flex;
     align-items: center;
     gap: 20px;
-    padding: 8px 20px ;
+    padding: 8px 20px;
     background: #232f3e;
     color: #fff;
     font-size: 15px;
@@ -245,6 +249,7 @@ nav {
     font-size: 15px;
     font-weight: 400;
 }
+
 footer {
     display: flex;
     justify-content: space-between;
@@ -266,25 +271,30 @@ footer {
     color: #f08804;
     border-radius: 50%;
     font-size: 20px;
-    transition: font-size 0.3s ease; /* Add transition for smooth font size change */
+    transition: font-size 0.3s ease;
+    /* Add transition for smooth font size change */
 }
 
 .cartcount.small {
     right: 86px;
-    font-size: 16px; /* Reduced font size for 10-99 count */
+    font-size: 16px;
+    /* Reduced font size for 10-99 count */
 }
 
 .cartcount.smaller {
-     right: 83px;
-     margin-top: 5px;
-     font-size: 13px; /* Further reduced font size for 99+ count */
+    right: 83px;
+    margin-top: 5px;
+    font-size: 13px;
+    /* Further reduced font size for 99+ count */
 }
 
 #seller-rank2 {
-    margin-top: -5px; /* Adjust this value as needed */
-    margin-bottom: -10px; /* Adjust this value as needed */
-  }
-  
+    margin-top: -5px;
+    /* Adjust this value as needed */
+    margin-bottom: -10px;
+    /* Adjust this value as needed */
+}
+
 
 /* ----------- media queries -------- */
 
@@ -292,67 +302,81 @@ footer {
     nav {
         flex-wrap: wrap;
     }
-    .nav-search{
+
+    .nav-search {
         order: 7;
         margin: 15px 0 5px;
         min-width: 300px;
     }
 
-    .box-col{
+    .box-col {
         max-width: 48%;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .nav-location{
+    .nav-location {
         display: none;
     }
+
     .nav-language {
         display: none;
     }
-    .nav-text{
+
+    .nav-text {
         display: none;
     }
+
     .nav-bottom {
         font-size: 13px;
         gap: 10px;
         overflow-x: scroll;
     }
-    .nav-bottom::-webkit-scrollbar{
+
+    .nav-bottom::-webkit-scrollbar {
         display: none;
     }
+
     .nav-bottom p {
         text-wrap: nowrap;
     }
-    .mobile-user-icon{
-        display: flex!important;
+
+    .mobile-user-icon {
+        display: flex !important;
         flex: 1;
         justify-content: flex-end;
     }
+
     .mobile-user-icon img {
         width: 25px;
     }
+
     .nav-cart h4 {
         display: none;
     }
+
     .nav-cart img {
         width: 25px;
     }
+
     .header-slider a {
         top: 24%;
         padding: 2vh 1vw;
         font-size: 15px;
     }
-    .box-col{
+
+    .box-col {
         margin-top: 50px;
         max-width: 100%;
         width: 100%;
     }
+
     footer {
         justify-content: center;
         flex-direction: column;
         font-size: 14px;
     }
+
     .cartcount {
         right: 39px;
     }

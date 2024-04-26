@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mock.css">
+    <script src="https://kit.fontawesome.com/7d399dc76b.js" crossorigin="anonymous"></script>
+    <title>Cart</title>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/"><img src="./assets/amazon_logo.png" width="100" alt="" srcset=""></a>
+       <h1>Checkout (<span class="delivery-int">Item</span> )</h1>
+       <img src="./assets/secured-ssl._CB485936991_.png" alt="">
+    </nav>
+
+
+    <div class="cart">
+        <div class="cart-left">
+            
+            <div class="delivery-container">
+                <div class="left-section">
+                    <h1>1 Delivery address</h1>
+                </div>
+                <div class="delivery-address">
+                    <div class="address-details">
+                        <h2>Efe Apoki</h2>
+                        <p>1</p>
+                        <p>CULWELL STREET</p>
+                        <p>WOLVERHAMPTON, WV10 0JT</p>
+                        <p class="delivery-int">Add delivery instructions</p>
+                    </div>
+                    <div class="pick-up">
+                        <img src="./assets/a_pin@1x.png" width="20" alt="">
+                        <p> <b>Or pick up near this address</b> - <span class="delivery-int">See nearby pick-up locations</span></p>
+                    </div>
+                </div>                
+                <div class="right-section">
+                    <p class="delivery-int">Change</p>
+                </div>
+            </div>
+            
+            <hr>
+
+            <div id="loadingSpinner">
+                <img src="./assets/loading-4x._CB574634010_.gif" alt="Loading..." />
+              </div>
+              
+          
+            <div class="delivery-container">
+                <div class="left-section">
+                    <div class="leftsec">
+                        <h1>2 Add a payment method</h1>
+                    </div>
+                    <div class="payment-box">
+                        <div class="cc-dc">
+                            <b>Add a credit or debit card</b>
+                        </div>
+                        <hr>
+                        <div class="accepted-cards2">
+                            <div>
+                                <input type="radio" name="" id="" checked>
+                                <img src="./assets/card-logo-compact._CB478583243_.gif" width="30" alt="">
+                                <h3><span>Your Card Ending</span> Put the last 6 digit of the card</h3>
+                                <button class="delete-btn">Delete</button> <!-- Added Delete button -->
+                            </div>
+                        </div>                        
+                        <div class="accepted-cards">
+                            <img src="./assets/PlusIcon._CB485933946_.gif" width="20" alt="">
+                            <img src="./assets/card-logo-compact._CB478583243_.gif" width="30" alt="">
+                            <h3><span>Add a Credit or Debit Card</span> > Amazon accepts all major credit cards.</h3>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+
+
+        </div>
+
+        <div class="right2culm">
+
+            <div class="cart-right">
+                <button class="buynowbtn">Buy now</button>
+                <div class="cart-free-delivery">
+                    <p>By placing your order you agree to Amazon's <span class="delivery-int">Conditions of Use & Sale.</span> Please see our <span class="delivery-int">Privacy Notice</span>, our <span class="delivery-int">Cookies Notice </span>and our <span class="delivery-int">Interest-Based Ads Notice</span>.</p>
+                </div>
+                <hr>
+                <h1 class="order-sumh">Order Summary</h1>
+                <div class="order-sum">
+                    <p>Items:</p>
+                    <p class="order-sump"></p>
+                    <p>Postage & Packing:</p>
+                    <p class="order-sump deliverycost">$1.23</p>
+                </div>
+                <hr>
+                <div class="order-totals">
+                    <h1 class="order-one">Order Total:</h1>
+                    <p class="order-sump1">$19.99</p>
+                </div>
+                <div class="order-total">
+                    <p>Order Totals include VAT. <span class="delivery-int">See details</span></p>
+                </div>
+            </div>
+            <div class="delivery-cost">
+                <h1 class="delivery-int">How are delivery cost calculated?</h1>
+                <h1 class="delivery-int">Why didn't I qualify for FREE Delivery?</h1>
+            </div>
+        </div>
+
+        </div>
+
+
+        
+
+
+    
+<div class="right2culm2">
+    <div id="myModal" class="modal">
+        <div class="delivery-cost1">
+            <h2>Add card and save for future purchases</h2>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-content">
+
+           
+            <div class="left-from">
+
+                <div class="form-row">
+                    <div class="form-row-left">
+                        <div>
+                            <label for="cardName">Card number</label>
+                        </div>
+                        <div>
+                            <label for="cardName">Name on Card</label>
+                        </div>
+                        <div>
+                            <label for="cardName">Expiration date</label>
+                        </div>
+                       <div class="cardName">
+                        <label for="cardName">Secuity Code</label>
+                        <span>(CVV/CVC)</span>
+                       </div>
+                    </div>
+    
+                    <div class="form-row-right">
+                        <input type="tel" id="cardNumber" name="cardNumber" required>
+                        <input type="text" id="cardName" name="cardName" required>
+                        <div>
+                            <select name="expirationMonth">
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
+                            <select name="expirationYear">
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                                <option value="2032">2032</option>
+                                <option value="2033">2033</option>
+                                <option value="2034">2034</option>
+                                <option value="2035">2035</option>
+                                <option value="2036">2036</option>
+                                <option value="2037">2037</option>
+                                <option value="2038">2038</option>
+                                <option value="2039">2039</option>
+                                <option value="2040">2040</option>
+                                <option value="2041">2041</option>
+                                <option value="2042">2042</option>
+                                <option value="2043">2043</option>
+                                <option value="2044">2044</option>
+                            </select>
+                        </div>
+                        <div class="securityCode">
+                            <input type="password" id="securityCode" name="securityCode" style="height: 30px; width: 80px;" required>
+                            <p class="quest">(<span class="delivery-int">What's this?</span>)</p>
+                        </div>
+                        <div class="default-payment">
+                            <input type="checkbox" name="defaultPayment" id="defaultPayment" checked> 
+                            <p>Use as default payment</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            
+         <hr>
+         <div class="right-form">
+            <p>Amazon accepts all major credit and debit cards:</p>
+            <div class="cards1">
+                <div class="card">
+                    <img src="./assets/visa_5968397.png" alt="">
+                </div>
+                <div class="card">
+                    <img src="./assets/mastercard.256x149.png" alt="">
+                </div>
+                <div class="card">
+                    <img src="./assets/maestro.256x198.png" alt="">
+                </div>
+            </div>
+            <div class="cards">
+               <img src="./assets/american-express_5968245.png" alt="">
+            </div>
+         </div>
+        </div>
+        <div class="delivery-cost2">
+           <div>
+            <button class="btn">Cancel</button>
+            <button>Add your card</button>
+           </div>
+        </div>
+      </div>
+</div>
+
+<footer class="footer-cart">
+    <img src="./assets/amazon_logo.png" width="100" alt="">
+    <p>© 1996-2024, Amazon.com, Inc. or its affiliates</p>
+</footer>
+
+  <script src="./mock.js"></script>
+</body>
+
+
+</html>

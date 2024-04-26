@@ -77,6 +77,12 @@
             <hr>
             <div class="cart-list-subtotal"><b></b></div>
         </div>
+
+        <div class="cart-left2">
+            <h1>Your Amazon Cart is empty.</h1>
+            <p>Check your Saved for later items below or <a href="/"><span style="color: #007185;">continue
+                        shopping</span></a>.</p>
+        </div>
         <div class="cart-right">
             <div class="cart-free-delivery">
                 <p><i class="fa-solid fa-square-check"></i></p>
@@ -84,7 +90,7 @@
             </div>
             <p class="cart-subtotal"><b></b></p>
             <p class="cart-right-gift"> <input type="checkbox"> This order contains a gift</p>
-            <button>Proceed to checkout</button>
+            <a href="./mock.html"> <button id="buybtn">Proceed to checkout</button></a>
         </div>
     </div>
 
@@ -131,10 +137,10 @@
                     sellerRank.className = 'product-cart-bestseller';
                     sellerRank.id = 'seller-rank';
                     if (item.sellerRank) {
-                    sellerRank.innerHTML = '<span>#1 Best Seller</span> ' + item.sellerRank;
+                        sellerRank.innerHTML = '<span>#1 Best Seller</span> ' + item.sellerRank;
                     } else {
-                    // Hide the sellerRank element if item.sellerRank doesn't exist
-                    sellerRank.style.display = 'none';
+                        // Hide the sellerRank element if item.sellerRank doesn't exist
+                        sellerRank.style.display = 'none';
                     }
 
 
@@ -237,14 +243,40 @@
                             const storedCartItems = localStorage.getItem('cartItems');
                             if (storedCartItems) {
                                 let cartItems = JSON.parse(storedCartItems);
-                                cartItems = cartItems.filter(cartItem => cartItem.name !== item.name);
-                                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                                const remainingItems = cartItems.filter(cartItem => cartItem.name !== item.name);
+
+                                // Update localStorage with remaining items
+                                localStorage.setItem('cartItems', JSON.stringify(remainingItems));
 
                                 // Update cart count after removal
-                                updateCartCount(cartItems.length); // Call the updateCartCount function
+                                const totalCount = calculateCartCount(remainingItems);
+                                updateCartCount(totalCount);
+
+                                // Update subtotal after removal
+                                updateSubtotal(remainingItems);
+
+                                // Show message if cart is empty
+                                if (remainingItems.length === 0) {
+                                    const emptyCartMessage = document.querySelector('.cart-left2');
+                                    if (emptyCartMessage) {
+                                        emptyCartMessage.style.display = 'block';
+                                    }
+                                }
+
+                                // Check if cart is empty and update cart-right display
+                                const cartRightSection = document.querySelector('.cart-right');
+                                const cartLeftSection = document.querySelector('.cart-left');
+                                if (remainingItems.length === 0 && cartRightSection
+                                    && cartLeftSection) {
+                                    cartRightSection.style.display = 'none'; // Hide the cart-right section
+                                    cartLeftSection.style.display = 'none'; // Hide the cart-left section
+                                }
                             }
                         });
                     }
+
+
+                    
 
 
 
@@ -277,9 +309,7 @@
             }
 
         });
-    </script>
 
-    <script>
         function updateCartItemQuantity(itemName, newQuantity) {
             const storedCartItems = localStorage.getItem('cartItems');
             if (storedCartItems) {
@@ -354,6 +384,7 @@
             }
         }
 
+
         document.addEventListener("DOMContentLoaded", function () {
             const storedCartItems = localStorage.getItem("cartItems");
             if (storedCartItems) {
@@ -372,9 +403,78 @@
             }
         });
 
-    </script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const buyBtn = document.getElementById("buybtn");
+
+            if (buyBtn) {
+                buyBtn.addEventListener("click", function (event) {
+                    event.preventDefault(); // Prevent the default behavior of the anchor element (i.e., redirection)
+
+                    // Get the item count and total
+                    const itemCount = calculateCartCount(JSON.parse(localStorage.getItem("cartItems")));
+                    const total = calculateTotal(JSON.parse(localStorage.getItem("cartItems")));
+
+                    // Send the itemCount and total to your desired location (mock.html in this case)
+                    sendToCheckout(itemCount, total);
+                });
+            }
+        });
+
+        function calculateTotal(cartItems) {
+            let total = 0;
+            cartItems.forEach(item => {
+                total += item.price * item.quantity;
+            });
+            return total.toFixed(2);
+        }
+
+        function sendToCheckout(itemCount, total) {
+            // Redirect to mock.html with parameters in the URL
+            window.location.href = `./mock.html?itemCount=${itemCount}&total=${total}`;
+        }
 
 
+        document.addEventListener("DOMContentLoaded", function () {
+    // Retrieve cart items from localStorage
+    const storedCartItems = localStorage.getItem("cartItems");
+    if (storedCartItems) {
+        const cartItems = JSON.parse(storedCartItems);
+        if (cartItems.length > 0) {
+            // Cart is not empty, display the cart section
+            const cartRightSection = document.querySelector('.cart-right');
+            const cartLeftSection = document.querySelector('.cart-left');
+            if (cartRightSection) {
+                cartRightSection.style.display = 'block'; // Display the cart-right section
+            }
+            if (cartLeftSection) {
+                cartLeftSection.style.display = 'block'; // Display the cart-left section
+            }
+            // Add cart items to the cart display
+            cartItems.forEach(item => {
+                createCartItemElement(item);
+            });
+        } else {
+            // Cart is empty, hide the cart sections
+            const cartRightSection = document.querySelector('.cart-right');
+            const cartLeftSection = document.querySelector('.cart-left');
+            const cartLeftSection2 = document.querySelector('.cart-left2');
+            if (cartRightSection) {
+                cartRightSection.style.display = 'none'; // Hide the cart-right section
+            }
+            if (cartLeftSection) {
+                cartLeftSection.style.display = 'none'; // Hide the cart-left section
+            }
+            if (cartLeftSection2) {
+                cartLeftSection2.style.display = 'block'; // Hide the cart-left section
+                
+            }
+        }
+    }
+});
+
+
+ </script>
 
 </body>
 
