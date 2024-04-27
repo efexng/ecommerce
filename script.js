@@ -1,3 +1,26 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const buyBtn = document.querySelector(".product-buy");
+
+    if (buyBtn) {
+        buyBtn.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default behavior of the button
+
+            // Get the selected quantity and product price
+            const selectedQuantity = document.querySelector(".product-quantity").value;
+            const productPriceText = document.getElementById("product-price-value").textContent.trim();
+            const productPrice = parseFloat(productPriceText.replace('$', '').replace(',', ''));
+
+            // Calculate total
+            const total = selectedQuantity * productPrice;
+
+            // Redirect to mock.html with parameters in the URL
+            window.location.href = `./mock2.html?quantity=${selectedQuantity}&price=${total}`;
+        });
+    }
+});
+
+
+
 const imgs = document.querySelectorAll('.header-slider ul img');
 const prev_btn = document.querySelector('.control_prev');
 const next_btn = document.querySelector('.control_next');
@@ -77,3 +100,9 @@ const storedCartItems = localStorage.getItem("cartItems");
             }
             const addToCartBtn = document.getElementById("addtocart");
             const quantitySelect = document.querySelector(".product-quantity");
+
+
+
+
+
+

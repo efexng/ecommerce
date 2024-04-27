@@ -52,61 +52,49 @@ cancelBtn.addEventListener("click", function () {
   modal.style.display = "none"; // Close the modal
 });
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to parse URL parameters
-  function getParameterByName(name, url) {
-      if (!url) url = window.location.href;
-      name = name.replace(/[\[\]]/g, "\\$&");
-      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-          results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, " "));
+  const urlParams = new URLSearchParams(window.location.search);
+  const quantity = parseInt(urlParams.get('quantity'));
+  const price = parseFloat(urlParams.get('price'));
+  const deliveryCost = parseFloat(document.querySelector('.deliverycost').textContent.replace('$', ''));
+
+  // Calculate the total including item price and delivery cost
+  const total = price + deliveryCost;
+
+
+  // Update the HTML elements with the retrieved values
+  const deliveryInt = document.querySelector(".delivery-int");
+  const orderSump = document.querySelector(".order-sump");
+  const orderSump1 = document.querySelector(".order-sump1");
+
+
+  if (quantity > 1) {
+      deliveryInt.textContent = `${quantity} Items`;
+  } else {
+      deliveryInt.textContent = `${quantity} Item`;
   }
 
-  // Retrieve itemCount and total from URL parameters
-  const itemCount = getParameterByName('itemCount');
-  const total = parseFloat(getParameterByName('total'));
-
-  // Display the retrieved values in the HTML
-  const itemCountElement = document.querySelector('.delivery-int'); // Assuming you want to display it in an element with class "delivery-int"
-  const totalElement = document.querySelector('.order-sump'); // Assuming you want to display it in an element with class "order-one"
-  const totalElement1 = document.querySelector('.order-sump1'); // Assuming you want to display it in an element with class "order-one"
-  const deliveryCostElement = document.querySelector('.deliverycost'); // Assuming you want to get the delivery cost element
-
-  if (itemCountElement && totalElement && totalElement1 && deliveryCostElement) {
-      itemCountElement.textContent = itemCount > 1 ? itemCount + ' items' : itemCount + ' item';
-
-      const deliveryCost = parseFloat(deliveryCostElement.textContent.replace(/\$/, '')); // Extract delivery cost as a number
-      const orderTotal = total + deliveryCost; // Calculate the order total
-
-      totalElement.textContent = `$${total.toFixed(2)}`; // Display the original total with 2 decimal places
-      totalElement1.textContent = `$${orderTotal.toFixed(2)}`; // Display the updated order total with delivery cost included
-  }
+  orderSump.textContent = `$${price.toFixed(2)}`;
+  orderSump1.textContent = `$${total.toFixed(2)}`;
 });
 
 
 
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Function to parse URL parameters
-  function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-  }
 
-  // Retrieve itemCount from URL parameters
-  const itemCount = getParameterByName('itemCount');
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const quantity = parseInt(urlParams.get('quantity'));
 
   // Display the retrieved itemCount in the HTML
   const itemCountElement = document.querySelector('.delivery-int'); // Assuming you want to display it in an element with class "delivery-int"
   if (itemCountElement) {
-    itemCountElement.textContent = itemCount > 1 ? itemCount + ' items' : itemCount + ' item';
+    itemCountElement.textContent = quantity > 1 ? quantity + ' items' : quantity + ' item';
   }
 
   // Get the "Buy now" button
@@ -138,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Delay the redirection to order.html until after 3 seconds
     setTimeout(function () {
       // Redirect to order.html with itemCount as a query parameter
-      window.location.href = `order.html?itemCount=${itemCount}`;
+      window.location.href = `order.html?itemCount=${quantity}`;
       // Delete everything in the cart after redirection
       const cartItems = localStorage.getItem('cartItems');
       if (cartItems) {
