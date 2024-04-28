@@ -122,23 +122,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show the loading spinner for 3 seconds (3000 milliseconds)
     const loadingSpinner = document.getElementById("loadingSpinner");
     loadingSpinner.style.display = "block"; // Display the loading spinner
-
+  
     // Delay the redirection to order.html until after 3 seconds
     setTimeout(function () {
       // Redirect to order.html with itemCount as a query parameter
       window.location.href = `order.html?itemCount=${quantity}`;
-      // Delete everything in the cart after redirection
-      const cartItems = localStorage.getItem('cartItems');
-      if (cartItems) {
-        localStorage.removeItem('cartItems'); // Remove all cart items from localStorage
-        // Optionally, you can also clear the cart display on the page
-        const cartDisplay = document.querySelector('.cart-display');
-        if (cartDisplay) {
-          cartDisplay.innerHTML = ''; // Remove all cart items from the display
-        }
-      }
     }, 3000); // 3000 milliseconds = 3 seconds
   });
+  
 
   // Handle "Add your card" button click
   addCardBtn.addEventListener("click", function () {
